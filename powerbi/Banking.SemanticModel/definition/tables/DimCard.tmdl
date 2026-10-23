@@ -1,0 +1,112 @@
+table DimCard
+	lineageTag: ac49927b-1b4c-4883-8d1b-73afb5233f14
+
+	column CardID
+		dataType: int64
+		isHidden
+		lineageTag: f368dcee-17d6-43da-b381-d5d8663388da
+		summarizeBy: none
+		sourceColumn: CardID
+
+	column ClientID
+		dataType: int64
+		isHidden
+		lineageTag: 3626508b-663c-47be-a45a-f6c5d3679154
+		summarizeBy: none
+		sourceColumn: ClientID
+
+	column Brand
+		dataType: string
+		lineageTag: 22b5ad91-f388-4bfc-885f-ed64d9a7d855
+		summarizeBy: none
+		sourceColumn: Brand
+
+	column CardType
+		dataType: string
+		lineageTag: bbe4b4aa-5a4c-474c-b8a2-ad11cd177025
+		summarizeBy: none
+		sourceColumn: CardType
+
+	column HasChip
+		dataType: string
+		lineageTag: 2c3b0a2b-8ab5-4627-bae9-cf9d7e4111a4
+		summarizeBy: none
+		sourceColumn: HasChip
+
+	column CreditLimit
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: c681768b-b072-4c57-ba0a-3262416194ca
+		summarizeBy: none
+		sourceColumn: CreditLimit
+
+	column OpenedDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 943d9300-9281-4bd5-9f95-99db37db64c0
+		summarizeBy: none
+		sourceColumn: OpenedDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Expires
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: dca810bd-a0c7-4d71-aa35-7fa1e95a0a7d
+		summarizeBy: none
+		sourceColumn: Expires
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ObservedTransactions
+		dataType: int64
+		lineageTag: 29336b6f-6558-4e40-a105-a69c320797d6
+		summarizeBy: none
+		sourceColumn: ObservedTransactions
+
+	column ObservedActive
+		dataType: int64
+		isHidden
+		lineageTag: 3583f3a2-e208-4b10-b96c-8713bd19b5c2
+		summarizeBy: none
+		sourceColumn: ObservedActive
+
+	column LastObservedDate
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: bc4ae621-efd6-4628-b885-f1c751106e75
+		summarizeBy: none
+		sourceColumn: LastObservedDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DaysSinceObserved
+		dataType: int64
+		lineageTag: 00770988-1d5a-47a9-969f-a29cf3c7fcec
+		summarizeBy: none
+		sourceColumn: DaysSinceObserved
+
+	column SnapshotStatus
+		dataType: string
+		lineageTag: c3f8d9bc-4a1f-4b5c-b83b-298ca344efbe
+		summarizeBy: none
+		sourceColumn: SnapshotStatus
+
+	column LongOpenUnobserved
+		dataType: int64
+		isHidden
+		lineageTag: 66e079eb-805c-480d-9c3e-3a89233d632b
+		summarizeBy: none
+		sourceColumn: LongOpenUnobserved
+
+	partition DimCard = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "/DimCard.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, {"CardID","ClientID","CreditLimit","OpenedDate","Expires","ObservedTransactions","ObservedActive","LastObservedDate","DaysSinceObserved","LongOpenUnobserved"}),
+				  Typed = Table.TransformColumnTypes(Nulls, {{"CardID", Int64.Type}, {"ClientID", Int64.Type}, {"Brand", type text}, {"CardType", type text}, {"HasChip", type text}, {"CreditLimit", Currency.Type}, {"OpenedDate", type date}, {"Expires", type date}, {"ObservedTransactions", Int64.Type}, {"ObservedActive", Int64.Type}, {"LastObservedDate", type date}, {"DaysSinceObserved", Int64.Type}, {"SnapshotStatus", type text}, {"LongOpenUnobserved", Int64.Type}}, "en-US")
+				in
+				  Typed
+

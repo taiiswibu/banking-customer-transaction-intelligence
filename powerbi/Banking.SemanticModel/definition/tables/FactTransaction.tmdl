@@ -1,0 +1,174 @@
+table FactTransaction
+	lineageTag: 32d7b66c-335c-4827-b74d-abf96b528f2a
+
+	column TransactionID
+		dataType: int64
+		isHidden
+		lineageTag: 47485d2b-02af-4a2f-ac53-b50f016e87a2
+		summarizeBy: none
+		sourceColumn: TransactionID
+
+	column Timestamp
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm
+		lineageTag: 783d48a3-33b2-4dd5-a651-3f9e57404d5f
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: fac5d59d-c046-41fa-a204-629b01a1d4dc
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ClientID
+		dataType: int64
+		isHidden
+		lineageTag: e1c5252e-9efe-4146-95ae-5144088dab3d
+		summarizeBy: none
+		sourceColumn: ClientID
+
+	column CardID
+		dataType: int64
+		isHidden
+		lineageTag: 5378dd52-dd95-48b4-a335-3b1825a58083
+		summarizeBy: none
+		sourceColumn: CardID
+
+	column AmountCents
+		dataType: int64
+		isHidden
+		lineageTag: 7c89901d-dea3-4356-ba6d-caefab2068d5
+		summarizeBy: none
+		sourceColumn: AmountCents
+
+	column Amount
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: b6a560fb-e799-4818-a2c8-fe3157c81b8a
+		summarizeBy: none
+		sourceColumn: Amount
+
+	column Channel
+		dataType: string
+		lineageTag: ad9f01db-715e-4657-a5dc-dc8cf8516216
+		summarizeBy: none
+		sourceColumn: Channel
+
+	column MerchantID
+		dataType: int64
+		isHidden
+		lineageTag: 31c8ac2e-c1d1-48e8-892d-d52915c63849
+		summarizeBy: none
+		sourceColumn: MerchantID
+
+	column MerchantCity
+		dataType: string
+		lineageTag: ac28497d-bdbd-4074-a413-61c4407bba9b
+		summarizeBy: none
+		sourceColumn: MerchantCity
+
+	column MerchantState
+		dataType: string
+		lineageTag: c2088ff0-2f0b-438a-b3cc-ca82ec747937
+		summarizeBy: none
+		sourceColumn: MerchantState
+
+	column MCC
+		dataType: int64
+		lineageTag: 253e92c3-4628-4f50-98d3-23d9c918edde
+		summarizeBy: none
+		sourceColumn: MCC
+
+	column Errors
+		dataType: string
+		lineageTag: 57b7c5e6-4680-49d4-8585-66fc08aa1555
+		summarizeBy: none
+		sourceColumn: Errors
+
+	column HasError
+		dataType: int64
+		isHidden
+		lineageTag: 36b27f74-a0d2-4571-a375-8cc9674ca9e5
+		summarizeBy: none
+		sourceColumn: HasError
+
+	column ErrorCount
+		dataType: int64
+		lineageTag: 39ca5f7f-305f-44e0-ba48-a67afb7146d9
+		summarizeBy: none
+		sourceColumn: ErrorCount
+
+	column PrimaryError
+		dataType: string
+		lineageTag: cfe13ba9-174f-4fa7-8628-a7d2e095fe3b
+		summarizeBy: none
+		sourceColumn: PrimaryError
+
+	column AmountType
+		dataType: string
+		lineageTag: b1e3e13c-5806-4da6-b631-5b83d1217ac1
+		summarizeBy: none
+		sourceColumn: AmountType
+
+	column IsPhysicalUS
+		dataType: int64
+		isHidden
+		lineageTag: dac70cd1-b940-4a03-ad8f-513a0d16eccb
+		summarizeBy: none
+		sourceColumn: IsPhysicalUS
+
+	column HighValueFlag
+		dataType: int64
+		isHidden
+		lineageTag: ee59b19b-7ca8-4488-a522-c0489eaea8a5
+		summarizeBy: none
+		sourceColumn: HighValueFlag
+
+	column MultiStateFlag
+		dataType: int64
+		isHidden
+		lineageTag: 96c26080-9b9d-4e42-8413-71889bd482e7
+		summarizeBy: none
+		sourceColumn: MultiStateFlag
+
+	column ErrorBurstFlag
+		dataType: int64
+		isHidden
+		lineageTag: d9aeb67a-e618-4124-a195-049aa0d8e781
+		summarizeBy: none
+		sourceColumn: ErrorBurstFlag
+
+	column ReviewFlag
+		dataType: int64
+		isHidden
+		lineageTag: bcbd98a0-a724-4894-97d1-72fcc2b92088
+		summarizeBy: none
+		sourceColumn: ReviewFlag
+
+	column ReviewStatus
+		dataType: string
+		lineageTag: 5327756e-df07-4d07-be55-79ebc28bbd5d
+		summarizeBy: none
+		sourceColumn: ReviewStatus
+
+	column ReviewReason
+		dataType: string
+		lineageTag: 28821b34-0785-44fb-be53-6e959b3e6006
+		summarizeBy: none
+		sourceColumn: ReviewReason
+
+	partition FactTransaction = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "/FactTransaction.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, {"TransactionID","Timestamp","Date","ClientID","CardID","AmountCents","Amount","MerchantID","MCC","HasError","ErrorCount","IsPhysicalUS","HighValueFlag","MultiStateFlag","ErrorBurstFlag","ReviewFlag"}),
+				  Typed = Table.TransformColumnTypes(Nulls, {{"TransactionID", Int64.Type}, {"Timestamp", type datetime}, {"Date", type date}, {"ClientID", Int64.Type}, {"CardID", Int64.Type}, {"AmountCents", Int64.Type}, {"Amount", Currency.Type}, {"Channel", type text}, {"MerchantID", Int64.Type}, {"MerchantCity", type text}, {"MerchantState", type text}, {"MCC", Int64.Type}, {"Errors", type text}, {"HasError", Int64.Type}, {"ErrorCount", Int64.Type}, {"PrimaryError", type text}, {"AmountType", type text}, {"IsPhysicalUS", Int64.Type}, {"HighValueFlag", Int64.Type}, {"MultiStateFlag", Int64.Type}, {"ErrorBurstFlag", Int64.Type}, {"ReviewFlag", Int64.Type}, {"ReviewStatus", type text}, {"ReviewReason", type text}}, "en-US")
+				in
+				  Typed
+

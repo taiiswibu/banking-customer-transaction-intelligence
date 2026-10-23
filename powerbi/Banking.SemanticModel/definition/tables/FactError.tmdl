@@ -1,0 +1,27 @@
+table FactError
+	lineageTag: 523d0ae9-60e5-4c0d-9a6f-c61e7944b819
+
+	column TransactionID
+		dataType: int64
+		isHidden
+		lineageTag: e564744d-c37a-40d9-b22f-aa770a9d467d
+		summarizeBy: none
+		sourceColumn: TransactionID
+
+	column Error
+		dataType: string
+		lineageTag: 301cf734-7ff8-4ea1-a09e-1107c74aad8f
+		summarizeBy: none
+		sourceColumn: Error
+
+	partition FactError = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "/FactError.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, {"TransactionID"}),
+				  Typed = Table.TransformColumnTypes(Nulls, {{"TransactionID", Int64.Type}, {"Error", type text}}, "en-US")
+				in
+				  Typed
+

@@ -1,0 +1,2 @@
+# The project build uses Python's standard library only.
+# Python 3.10+; SQLite 3.25+ for window functions.

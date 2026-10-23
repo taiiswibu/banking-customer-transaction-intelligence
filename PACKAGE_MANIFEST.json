@@ -1,0 +1,654 @@
+{
+  ".gitignore": {
+    "bytes": 142,
+    "sha256": "7b80665077a359d374f1367c81a5b5740f7793d843eb2f65329854f719b13b03"
+  },
+  "OPEN_PREVIEW.bat": {
+    "bytes": 57,
+    "sha256": "000920ee401c68985b88ec5934f5e6c26e81cade7a85d26ef3995a5e97f37644"
+  },
+  "README.md": {
+    "bytes": 7881,
+    "sha256": "c33c35410312b0a30fe3fd86ef6e8ba1921fea2f6b5fb7f9b001ce7c2a1acd69"
+  },
+  "START_HERE.bat": {
+    "bytes": 438,
+    "sha256": "913f9d3ad6a467af4f8a1ddbc9158d609d9aae3dfce2858991d960e5352e3731"
+  },
+  "assets/preview_template.html": {
+    "bytes": 19943,
+    "sha256": "385eef0143da44f6b9c3fe61ca9264e03fb13698cbf3fb92a8afe8a8d0258449"
+  },
+  "assets/schemas/all.json": {
+    "bytes": 170414,
+    "sha256": "a7c11d66ad1250db8339d0e454fb375b1ce729c1b82e0ae477541597b787438d"
+  },
+  "data/analytics.sqlite": {
+    "bytes": 31588352,
+    "sha256": "5bc202bb5cded28e2dfa77c4077e972b56f389ac0f0c4cedf85b0bdc67b60754"
+  },
+  "data/analytics.sqlite-journal": {
+    "bytes": 8720,
+    "sha256": "e8c9fa39aec3ce1465e12ad9f7b6a5a447922f7f0f0bdcacccd2cc43809fd9ad"
+  },
+  "data/processed/DimCard.csv": {
+    "bytes": 555527,
+    "sha256": "2db589e610b1f8732f0c37f316ab6843c12a3777d3ef2d1b5c16a1cd3ba74e3a"
+  },
+  "data/processed/DimCustomer.csv": {
+    "bytes": 110228,
+    "sha256": "54747f17f6bdd69906b89977b5b438f3fbf596392880093623ccea35fef4dd7c"
+  },
+  "data/processed/DimDate.csv": {
+    "bytes": 50750,
+    "sha256": "0bb05ff41173a8f8b16817dec015053d548922823110bbf035bc0752073645ca"
+  },
+  "data/processed/DimMCC.csv": {
+    "bytes": 6774,
+    "sha256": "755fb1fecf69a16dc9cd5e7b448333dc2dbccd4ed1fe9ec6390c41e12510ab94"
+  },
+  "data/processed/DimRule.csv": {
+    "bytes": 59,
+    "sha256": "eb49809570057cc07b854bd7091a9a78adbabc3e0fdeae878d17475ecf7b369a"
+  },
+  "data/processed/FactError.csv": {
+    "bytes": 77001,
+    "sha256": "7859ee519fb777f83dfac6c0ebb85dc4c1dc88180e683e758b52c81a99bb7264"
+  },
+  "data/processed/FactTransaction.csv": {
+    "bytes": 22192895,
+    "sha256": "905535e7e7673e93562d71988ea60464949817cb1bbd8558e89bb4d4280a30d1"
+  },
+  "data/processed/MonthlySummary.csv": {
+    "bytes": 1523,
+    "sha256": "5a0d9a2054586792cdbc86464f5f7df4275320c94b72cbb6644792a52af85d21"
+  },
+  "data/raw/cards.csv": {
+    "bytes": 406419,
+    "sha256": "96a3ea8558aac0f2a786eee1b686ac741115398890da3463f8b563419a83ad1b"
+  },
+  "data/raw/mcc_codes.csv": {
+    "bytes": 3699,
+    "sha256": "ec8765019126a03156402db7d3e762d6c615683abe81b123abef7fb4c08650c9"
+  },
+  "data/raw/transactions.csv": {
+    "bytes": 14445315,
+    "sha256": "e9c5c2fce8a0758dbcc0f60fb5d32282e03a7d83e8f1e7f7fcd59dfc79a69ec0"
+  },
+  "data/raw/users.csv": {
+    "bytes": 109249,
+    "sha256": "befaed3eda621f2781c4dbc24fa416fe151997094b28930f97fadb525d9f270e"
+  },
+  "docs/ACCEPTANCE_CHECKLIST.md": {
+    "bytes": 1580,
+    "sha256": "b6cc84fa36151d2827c546d4af79f16b9074c0c8f7598146062cc0a3da9f67aa"
+  },
+  "docs/DATA_MODEL.md": {
+    "bytes": 4464,
+    "sha256": "15a3863805a7c1cf3a5c468b776daab233c224b290e433ac03d80c911faffac1"
+  },
+  "docs/DAX_CATALOG.md": {
+    "bytes": 6556,
+    "sha256": "75a5542e9cb26afd7b4a9354caecc9c24012c9e1a32ae7d0eb72648f276f3a3e"
+  },
+  "docs/HUONG_DAN_VI.md": {
+    "bytes": 11214,
+    "sha256": "12a5e572269cab81a547a6a828ca3b54fa628bedbb50172c7da09972c1aedf29"
+  },
+  "docs/INTERVIEW_NOTES.md": {
+    "bytes": 4396,
+    "sha256": "3cd4252fb1cdee34fa916f7149625b138d29bb5ae554084748020e6de404dda2"
+  },
+  "docs/KPI_DICTIONARY.md": {
+    "bytes": 6941,
+    "sha256": "b383c87c81a3bc41d8f18ad8a5fddc0773e716859d15c0479813e2228b2e07e9"
+  },
+  "powerbi/Banking.Report/StaticResources/RegisteredResources/BankingNavyTeal.json": {
+    "bytes": 580,
+    "sha256": "d938731ff1b446e9584a7f675ffc5307bb438f55a79e333542685d2d18b57681"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/page.json": {
+    "bytes": 752,
+    "sha256": "4afaf3717e0ea580db61730d73f9c95c35ba7b7c0a35fcbd12023b294e7fcce9"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/1002c16afff5d3119b93/visual.json": {
+    "bytes": 4252,
+    "sha256": "1e5cabd3cd65768b4e2c41165aaaebef92d4a4ac36b00045db5b194c13284b0f"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/27ecdab444887fd4d5b5/visual.json": {
+    "bytes": 4693,
+    "sha256": "1352fdb0e830310867a4bc5816ec60bd206cefd65d9c95e427dc767fc9747709"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/300d9ee9d5dc49f3fd28/visual.json": {
+    "bytes": 2179,
+    "sha256": "a7e27e358a0b7398b7703fb7dc014014bd31fed1ee12a87e7894956baab1c1fa"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/55a847bcb816c5284a13/visual.json": {
+    "bytes": 2086,
+    "sha256": "6d96943764acbad2accd2397f512377f0a1399d609dabd6d9bb83aa3ff0a489e"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/619949e09a30199bcd52/visual.json": {
+    "bytes": 4713,
+    "sha256": "74e0e160fe18be0093000c854c2415c45909efffab5188168feb054d9ae51196"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/629a70e67dc712e4e9c4/visual.json": {
+    "bytes": 4687,
+    "sha256": "d35f67571920e03667360dc2d0019f4955fb6afa07d44f67cf0ea1d6ba84c2e4"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/79b0849aa75ad1aa0095/visual.json": {
+    "bytes": 6259,
+    "sha256": "9c79be7bdadf9284b948a3fc4243a1bbf56629b0734f294010a9a3b799001ac8"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/91e813b08ce18a5be46a/visual.json": {
+    "bytes": 4700,
+    "sha256": "7a378190855a1a641c8461b7b4c5d92f6d204e8ac52e3d91a862226828b8f1f0"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/b4c18476c950781f1890/visual.json": {
+    "bytes": 2220,
+    "sha256": "e1972b13b815f34c4bf3278872988b5858f424bfcebed76871634c8ea1a283a8"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/b8e9855ca84755b218f8/visual.json": {
+    "bytes": 2093,
+    "sha256": "695ad3b0fdf01f90a84372a8d5e35b5efe0f71ec3b8dfe6e03177d63f119442c"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/bbdd94bc5dc08f0befdb/visual.json": {
+    "bytes": 6654,
+    "sha256": "3e59a950d341669892a9c511ebb70247dc9c98203220cb76f1d34bb520936086"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/bd2d192fc0e5e40594c7/visual.json": {
+    "bytes": 2125,
+    "sha256": "bde70413658a7bc800b696b77aa58a748e5548f72a95f042a9e205ef58355d52"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/bf9148398304fdca6cc2/visual.json": {
+    "bytes": 9252,
+    "sha256": "b35f731c178cc6692d705830c4266e497cef4d7ca78674d107188f95774f6f89"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/d5dbc357c5883d63bbd6/visual.json": {
+    "bytes": 4201,
+    "sha256": "1a568790b56eb608baf076ba1c3b63ee16355bbb79c60f42cdbf307ab796abf5"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/dad3dfc2ca9beb332b05/visual.json": {
+    "bytes": 2547,
+    "sha256": "a0fd570f42a9e79dd5876bfc2efb2b58e9f5fef78e4bf5be335b204cfe8cff41"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/dcbe22ab8b0cd58c9d6c/visual.json": {
+    "bytes": 4714,
+    "sha256": "72c32c8a41335a8031417a19d44376040b145fdce2c1f6420d2ae34b839bc5a6"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/dfbf927788c60349a144/visual.json": {
+    "bytes": 4229,
+    "sha256": "1c64cfd56c676637aa5d43a5d9a2a7648105f1332b60948e2bb9ad531657e796"
+  },
+  "powerbi/Banking.Report/definition/pages/060abacf7f7d6b445714/visuals/e059f43bcd0c244e5e33/visual.json": {
+    "bytes": 2060,
+    "sha256": "b577612ec09b505323936bc96fbeb2046107657e3da8677d8c2a3f0553cd6b3a"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/page.json": {
+    "bytes": 753,
+    "sha256": "09a25e9b8dc02e8fd0a3b49d03a1aa66453e993ecd2d52acd683ad81ff8bf810"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/0a7d54fd33a11af03bef/visual.json": {
+    "bytes": 2126,
+    "sha256": "5eb67b7ccaa7567243b6a8b45f0c76806f7509c0e1317f7e2d212ad465cf65a3"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/13ac7922e34700fb9a14/visual.json": {
+    "bytes": 4690,
+    "sha256": "088828c516e9789776e6d4be0cf926631ec3d0265ce8d00ec4ab832a9ecee594"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/150ce7fbd3fc3c30f419/visual.json": {
+    "bytes": 4229,
+    "sha256": "975007d401de0571de8bd9e2d1c2ac25310b2051554105e6aaeb1fac7e898f50"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/1d0aedcba73ff1826d39/visual.json": {
+    "bytes": 4682,
+    "sha256": "16b92cf8101a38214ecc77d9c76a7a1034aed12dc190863b058122a648ebb04f"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/1f1f2abd8df457f06065/visual.json": {
+    "bytes": 6346,
+    "sha256": "6d7a14c179ab9c10141797c500ab307077d3e1a49640db0f09837b4b13b9ccb1"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/22f86899a152396be525/visual.json": {
+    "bytes": 2179,
+    "sha256": "426d2758243546a038db019c25ade297439dc2de6cea8092a761ad6074acbcf1"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/2b86a23667c8444ee9fa/visual.json": {
+    "bytes": 6642,
+    "sha256": "5b111cd2195e05ed67d3385e2e467ec15062a901e30cae7bbb12a9713f787dd9"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/318d3a687124ca2f7a3a/visual.json": {
+    "bytes": 2082,
+    "sha256": "37680846cdd0b03a9558f52f7092037e6f136668b1670a68ac4258d9db50af14"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/45282797b6c98a9a4a69/visual.json": {
+    "bytes": 4731,
+    "sha256": "7291f041366b85b8417ddb3949f334bfefce7908468bc2d10c0d811a5821bc3b"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/8711b0ea8abaaf0d2dd5/visual.json": {
+    "bytes": 6278,
+    "sha256": "9f80fd068fa4fd9b468aac0fc3468fdef76de09d9a1b4710d50bef41fd2cecde"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/944f659f29a6a5491fb3/visual.json": {
+    "bytes": 4694,
+    "sha256": "95b675c02aefaf44fb7280ff784587b01cc624f926d27be1599c3cec82842dcb"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/96f29128e99d2195b9d5/visual.json": {
+    "bytes": 2093,
+    "sha256": "26376809a6fab7850b78d80d94a221f9e2ad8e32937e3404ef3671bd73ebda61"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/a61a30e08bd79b238325/visual.json": {
+    "bytes": 6193,
+    "sha256": "46b3e556f6e1cfe2dad2d1af049a0833d171805c9db2447f422220478bf1b13d"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/a9bb6a4409a650072cd7/visual.json": {
+    "bytes": 4201,
+    "sha256": "c084f056f9774e14726c902425e87014e941f803a28e74e551dc64ba11a725b4"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/c1f7f9da3345ba094921/visual.json": {
+    "bytes": 4714,
+    "sha256": "5928510038b77cbe5aa96bd5283e53ce509c051286d460134f8e78f09121e123"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/cddce59c8ec53b6e6819/visual.json": {
+    "bytes": 2547,
+    "sha256": "f2be5a5b25c89bcbf5c73979bd97ed8371f0750f25294317ad64d7e8eec7c227"
+  },
+  "powerbi/Banking.Report/definition/pages/37890a8af6a14be82351/visuals/e6e7e10ce728e0338324/visual.json": {
+    "bytes": 2060,
+    "sha256": "bbf67ab2b73304822404b3d26229dff2b029ca92b6a62aabcfa9e1204b12440b"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/page.json": {
+    "bytes": 752,
+    "sha256": "52243ebf24de15e066d59469eb2ef468f7e3d7c4fd0d3c22990ae07e3e17bd40"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/0d0217a550b818cf40a3/visual.json": {
+    "bytes": 4675,
+    "sha256": "4ae7e389e0911e1b6ce1574dcefcded5beed183be6b80a28de612f73829a5cdc"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/1421bade52a763750241/visual.json": {
+    "bytes": 2087,
+    "sha256": "52eacc7a475fb7b73ce72c3d0688b314fd3affff98af082258eaf05683abc2f0"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/360e3b3b2e049b966102/visual.json": {
+    "bytes": 4683,
+    "sha256": "fc234c6c9f49850300af402ec7fceafc3fe0307ed95e17c2e3e83ad25f9af80e"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/374880fc7c6ef0e0e40d/visual.json": {
+    "bytes": 6674,
+    "sha256": "89f07f23971c927f67cf61290579de3a1481bea690e61274b08c9a01f8024b30"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/5376c69fcc41dbc3100a/visual.json": {
+    "bytes": 6292,
+    "sha256": "81efa7a23ba95ae5d6eae1603b5e80070f4c2a1b58c3029dcc8813e3f3c4d455"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/7702d0dbdaf850af6f5f/visual.json": {
+    "bytes": 2179,
+    "sha256": "d5a17793449cfa6617bf7f766e5ea45d4556f08e55f45ad574e6bc5836e46a33"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/8a971301e1c37b0a43b4/visual.json": {
+    "bytes": 4201,
+    "sha256": "57fbd338ec6df823e3ea66e3806dec69ac0a5e8f9b657b62d80298b87ba8687f"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/9831ed25d0f1f5501895/visual.json": {
+    "bytes": 4707,
+    "sha256": "38d9e604680d6d01471b502d2e8946957fa7d4e5eac8a39dad6199c57dfa71b3"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/ada3b320ef510650c2a4/visual.json": {
+    "bytes": 6289,
+    "sha256": "585dfad9ac842978a2b320d29055406f75720e96bcedbc0446deda5105f7f958"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/b29e398977fd3cbb14ca/visual.json": {
+    "bytes": 2060,
+    "sha256": "a8eaf571ba8b976667024b46dc3bfad558bde55b6b58b1d9cf1acafa5c8bce0e"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/b29e8b710caecf777f24/visual.json": {
+    "bytes": 4229,
+    "sha256": "0b267514c455ca8070f4434aecd3342d0a102c166591b761ec38387a8e454736"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/b38d348ba6a6b087fb40/visual.json": {
+    "bytes": 4686,
+    "sha256": "900a815a7ff8124b29086906385a97e01cb02b35a4d450e99d7af192b350b141"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/c9c33e58f4f9bcd997cf/visual.json": {
+    "bytes": 2093,
+    "sha256": "ee37711a9d25f87cd90ea9fd11bc6f31e2de41daa9f6181b8b0b4b7d96ce4b39"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/ddfefb2f50d5f9974c1a/visual.json": {
+    "bytes": 4705,
+    "sha256": "5081642c64b209804413f5a26f55c6cbfa5543efb6384773a61a88bbb146d422"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/e6011e41396d88545ef3/visual.json": {
+    "bytes": 2124,
+    "sha256": "2733b5c88dc0a316082289bbd1c1984dedcc85eb59227bf64228ee6ccba31b03"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/e69c99a1b6ad7239f825/visual.json": {
+    "bytes": 2228,
+    "sha256": "873cfa9ec52e86e9530a332a15d46d145689a159e27dfbbaa126a960f97d7d18"
+  },
+  "powerbi/Banking.Report/definition/pages/a6ba69d70f71546652c4/visuals/ecc9fab02a7bb2c1931d/visual.json": {
+    "bytes": 2547,
+    "sha256": "57ca61967330f98fe571286e46dd7148f5e2b84aaf488dedf528add9c923bc40"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/page.json": {
+    "bytes": 751,
+    "sha256": "092a11a8909330872f5bb2eadc2ab7d10931bffec07f0e0fbbe51e3ba86f4c13"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/060b8447a92b4cbc4e06/visual.json": {
+    "bytes": 2547,
+    "sha256": "226608ccb29633fa780516111fe16e9683c85e7b05f470d694097d2c46f103dc"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/0b8938408ecf352736b6/visual.json": {
+    "bytes": 4229,
+    "sha256": "8558030a732181f7a702a380115f59eaf7cdecabe9259dcdd7a9dbdcaf5122c9"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/17bca8aa6ca9994ce69b/visual.json": {
+    "bytes": 4722,
+    "sha256": "a6410e87e8351dec66c6a9f68cf7aac528989c70ee0fb07d730ebb4e00f9b0cb"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/1d7a31140e1bbae4e608/visual.json": {
+    "bytes": 2093,
+    "sha256": "163541471f2dd35c0b5abecabc16ed19f635f5c7e0c029f6aad05a311bf2f6cc"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/2808a53129735b6ea325/visual.json": {
+    "bytes": 4735,
+    "sha256": "b39030eeab4237ba688c9f2c76365a4a36eec2239c8cb6b33a94895ea63fc611"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/35b9d9aeb348a2812d6d/visual.json": {
+    "bytes": 2123,
+    "sha256": "2bb13402bf3ac29fc027cf9a9038a2ced0202c50aa3deb850552e922344f1d6e"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/395656fddd0df148a60e/visual.json": {
+    "bytes": 6303,
+    "sha256": "c61127895d35d61accb886dc6304b9a8e2e312c9ac3186cf859b199f39eb88fb"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/3c78fabad1efdd1cc7b6/visual.json": {
+    "bytes": 6288,
+    "sha256": "a0f5fed6cfb41a3dc645e8688cdb0782e9ff2bb92d36ba64238ae67f31b8f951"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/4620e27fd05523ad1466/visual.json": {
+    "bytes": 2089,
+    "sha256": "cbb9a3b9a9a1bc9aa7aca126cf65dbd59a8eb205f298df17876235ee4207ca5f"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/57b3e2fdb91a82e635ab/visual.json": {
+    "bytes": 2179,
+    "sha256": "ad1e1d3126adb04d34c13779833a55fe120d30f59714952204d7302f014f26ef"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/7f8822d55453172665a8/visual.json": {
+    "bytes": 4726,
+    "sha256": "d191d67127607a260baf538cb226c5335578fc8434c696a16934089a73d7d6a2"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/8600cc3308b37775de4b/visual.json": {
+    "bytes": 6268,
+    "sha256": "a4788695d5f7095e2aabe1c90e7f181cbb88407b2878bec031541f3bfe1ccc32"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/8e67232e909a74fdc30e/visual.json": {
+    "bytes": 4201,
+    "sha256": "5e65bde890a5bbf8a07d85081372b322c160c084980045a7f520f42c80329e3d"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/91790ced50786033d243/visual.json": {
+    "bytes": 4694,
+    "sha256": "2e3297e857c7eb50e0165984f58f57df0e712a56bc307af2d4aa91b301cfe573"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/91b3624aa017c3b689d6/visual.json": {
+    "bytes": 6210,
+    "sha256": "685a8d767a0fa7d974e011c5396ce5343c4a42faaa725f37e12e72f5124c51a5"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/b596702bdc19835b2ca4/visual.json": {
+    "bytes": 4698,
+    "sha256": "9b854f993ea5ec195132f854d285ad49e2255b38af4356796f10d7959b80260a"
+  },
+  "powerbi/Banking.Report/definition/pages/f614b78cab79536a419a/visuals/e180a97985df4398f933/visual.json": {
+    "bytes": 2060,
+    "sha256": "c2570ef3a8d995284f938f010f8d6da4dddd62a2b457e5f376b4b52c452de138"
+  },
+  "powerbi/Banking.Report/definition/pages/pages.json": {
+    "bytes": 302,
+    "sha256": "78d00c087cc96de6ee9a4ddd7f8e5e5a7fb047bf85a6129d5e8db327a77b4b4a"
+  },
+  "powerbi/Banking.Report/definition/report.json": {
+    "bytes": 837,
+    "sha256": "df1b766ec79fb183d4f477cebe8a21ef55b874931b80ea940c876e026ebbbe1b"
+  },
+  "powerbi/Banking.Report/definition/version.json": {
+    "bytes": 149,
+    "sha256": "32bc72b8e7996a054f96e655c8dd8fda82e5f502532610b45bc21a18cffe30b6"
+  },
+  "powerbi/Banking.Report/definition.pbir": {
+    "bytes": 233,
+    "sha256": "5cc09c6760506f098c5fe85dbbffd0a849ed6079d492e0b62b855a737ac46413"
+  },
+  "powerbi/Banking.SemanticModel/definition/database.tmdl": {
+    "bytes": 83,
+    "sha256": "076124e1ee065583515771b2791b129eff095b86e8c257b65fda26200b7055bc"
+  },
+  "powerbi/Banking.SemanticModel/definition/expressions.tmdl": {
+    "bytes": 98,
+    "sha256": "9cd97d34b3d3bda42d1a114d87d5e4e69eb56720ee357381abd44d9b70ce3058"
+  },
+  "powerbi/Banking.SemanticModel/definition/model.tmdl": {
+    "bytes": 396,
+    "sha256": "21d347589a7179285a03b89434e77c2f9ecea7dda84ccf633c4116ddff1ec9bd"
+  },
+  "powerbi/Banking.SemanticModel/definition/relationships.tmdl": {
+    "bytes": 895,
+    "sha256": "580831e3088201e176a61f48deeac1510ca22f01fed96ff7bfc7ebe0b03a6f96"
+  },
+  "powerbi/Banking.SemanticModel/definition/tables/DimCard.tmdl": {
+    "bytes": 2416,
+    "sha256": "c5c4c08e830e200148815a97b403d1260967f138ba4e2c97b14ef448d0c86e40"
+  },
+  "powerbi/Banking.SemanticModel/definition/tables/DimCustomer.tmdl": {
+    "bytes": 1638,
+    "sha256": "affe62e2acf4aa64b179a3e77e1bd3a44d48959aaf9204204c38a76f07f0bcb1"
+  },
+  "powerbi/Banking.SemanticModel/definition/tables/DimDate.tmdl": {
+    "bytes": 1374,
+    "sha256": "085e018e6dee0714b91500f0a64bfefbbf99c1b0d32c76ff196c80dcc55ef486"
+  },
+  "powerbi/Banking.SemanticModel/definition/tables/DimMCC.tmdl": {
+    "bytes": 1062,
+    "sha256": "18079340a30d9f5938578217ff9b175b05007774e5c1ba046e49c404a6b40d40"
+  },
+  "powerbi/Banking.SemanticModel/definition/tables/DimRule.tmdl": {
+    "bytes": 525,
+    "sha256": "6027df389ccf0c34a79d37fc79141dff21f1b328c5bf255a405ce356b8e551b3"
+  },
+  "powerbi/Banking.SemanticModel/definition/tables/FactError.tmdl": {
+    "bytes": 684,
+    "sha256": "312649429d27ee654b7ef735b1cacd0d48b1ee805d05793e203dd1b12755ae03"
+  },
+  "powerbi/Banking.SemanticModel/definition/tables/FactTransaction.tmdl": {
+    "bytes": 3612,
+    "sha256": "f80be4c6ec10dd708612e013c54f77f7b6efa043f5808fa7dcf37ea6e9c088ef"
+  },
+  "powerbi/Banking.SemanticModel/definition/tables/Measures.tmdl": {
+    "bytes": 6326,
+    "sha256": "ceb770d3f4ef936d66b61f0364aa2e9a72d5e83fed55f36701c94016404bd6fe"
+  },
+  "powerbi/Banking.SemanticModel/definition.pbism": {
+    "bytes": 166,
+    "sha256": "d3e52cd063a8fbab81f8b6cbbb0a83d05fa4e0b47da4cfbb046e03eecafc37c9"
+  },
+  "powerbi/Banking.pbip": {
+    "bytes": 167,
+    "sha256": "e4387840b8912209bd4dac095fc8eb98dc93112c3327b47957072e4364ff6889"
+  },
+  "reports/CASE_STUDY_VI.md": {
+    "bytes": 10656,
+    "sha256": "e7b0b250d428cfbdf650ab12e271c8415826bef82f0ac9ab25f7de23f0e11d72"
+  },
+  "reports/dashboard_preview.html": {
+    "bytes": 1106667,
+    "sha256": "6dc252588a54fa93443cac9501d9a7f557566cd6a4459ed8b79ce2464e56ff95"
+  },
+  "reports/data_quality.json": {
+    "bytes": 2605,
+    "sha256": "7aebb8753878aa606230c9b610bd24568adf6c1847da530ddadfcc865f829669"
+  },
+  "reports/metrics.json": {
+    "bytes": 704,
+    "sha256": "dcec7328eaf15be7416ea822b7b776d23a3911d8d436e355bed578a2498cd1a3"
+  },
+  "reports/model_manifest.json": {
+    "bytes": 3024,
+    "sha256": "e35bb0cf515f38d84be108fa1fc04e01eddf0aa9a62da9f4ee5bd5f0f2734c32"
+  },
+  "reports/preview_validation.json": {
+    "bytes": 253,
+    "sha256": "c47db3b239fa3158b9ad5f0ac722fd47dcc0afa59f0c5c71f4f1451c8b68db5e"
+  },
+  "reports/schema_validation.json": {
+    "bytes": 23369,
+    "sha256": "0ac62396eb3a4e82ae58bf350f5609b653b410eaef9fc54f4b6fb2bc155f4717"
+  },
+  "reports/sql_results/Q01.csv": {
+    "bytes": 144,
+    "sha256": "52e60d293a17b8c7b354c7deccc3bbbecdf3bccf0c1b6c139ad55252d8064ebb"
+  },
+  "reports/sql_results/Q02.csv": {
+    "bytes": 35,
+    "sha256": "5e921705e97cfbeb08c970a5525f4b89e161ed929642be61a1e8355acc11e0c9"
+  },
+  "reports/sql_results/Q03.csv": {
+    "bytes": 138,
+    "sha256": "9531f8bd4eb2da2faf0ef348a5b19577534c44507382792645d8294415a43578"
+  },
+  "reports/sql_results/Q04.csv": {
+    "bytes": 126,
+    "sha256": "e6a4e6e1567047cecd043660f54a0c8a312c6e127e2d6d30c5a1d839028ffa9c"
+  },
+  "reports/sql_results/Q05.csv": {
+    "bytes": 239,
+    "sha256": "87c6813a0b70ac4058459448186de38db095a31e34351b2844460bbea0afa827"
+  },
+  "reports/sql_results/Q06.csv": {
+    "bytes": 119,
+    "sha256": "0ae82202e79f95a4092c7583c72d036688784e39e5b7627ac2c4217ea122bb12"
+  },
+  "reports/sql_results/Q07.csv": {
+    "bytes": 7788,
+    "sha256": "bb82946993e59a0d7ee82e4a3e92414b1b90d9eddaac008e06a60d11f13f013f"
+  },
+  "reports/sql_results/Q08.csv": {
+    "bytes": 506,
+    "sha256": "b834c6f1eff287bf20ff847ef53b1c3da60d4de2d4aa88d95923c577860da6bc"
+  },
+  "reports/sql_results/Q09.csv": {
+    "bytes": 53810,
+    "sha256": "2f79e03707456ebcde06894aa99bb8652da11f5fac4f1073447d30c6828fab65"
+  },
+  "reports/sql_results/Q10.csv": {
+    "bytes": 211,
+    "sha256": "b8a375090c03c190a5b8f3544ea7c8008263c528009542beae84f34f773526e1"
+  },
+  "reports/sql_results/Q11.csv": {
+    "bytes": 15886,
+    "sha256": "6aaa4851510c7a6f956c5b7a06e908d10a8ba45750f3803fe019e3d9d991d364"
+  },
+  "reports/sql_results/Q12.csv": {
+    "bytes": 1697,
+    "sha256": "3d4cbb0f63bb7e537de62cdcbef2abb495425e5392cf3507bc621375b8dcfda5"
+  },
+  "reports/sql_results/Q13.csv": {
+    "bytes": 101,
+    "sha256": "93f2f1d7aa188f7557310dd7346cd99e7030fc2be2f7e751f5a37a000866c7ce"
+  },
+  "reports/sql_results/Q14.csv": {
+    "bytes": 106645,
+    "sha256": "6b7aee7b2f05b95a6e4f217919e35c3d0354e1a134e3cf03ec3f7fa8c73bc393"
+  },
+  "reports/sql_results/Q15.csv": {
+    "bytes": 9039,
+    "sha256": "0c02a0db54bf91912bfc2bc4d38ed393294e93748cbb48c386bd8bd7a1297051"
+  },
+  "reports/sql_results/Q16.csv": {
+    "bytes": 16625,
+    "sha256": "744b13d2f5f67f85cf0652e5c9d28286a9f87c7ef5d2bfddf668bc0bc25cb6d7"
+  },
+  "reports/sql_results/Q17.csv": {
+    "bytes": 187,
+    "sha256": "829116b66cfd3a7cd377210ed9463f478fe5ad237e8d6c2d04ad3b3732a68c05"
+  },
+  "reports/sql_results/Q18.csv": {
+    "bytes": 1130,
+    "sha256": "f1ce315e12daae6632b31d8f67f29e40f9eb27b3e53025c803553accbaa903d8"
+  },
+  "reports/sql_results/Q19.csv": {
+    "bytes": 98,
+    "sha256": "d493554b702f1b26ee1acd977fc6f708288a406a62f4d1606562d838424b4567"
+  },
+  "reports/sql_results/Q20.csv": {
+    "bytes": 314,
+    "sha256": "56cc9122bc2c242a7bfc40aa2f62f8e88db97efdaf4d6b3610f0f96825738355"
+  },
+  "reports/sql_results/Q21.csv": {
+    "bytes": 47,
+    "sha256": "76808c03851a5070d2b9c627237f16941865ba76f2908d2c0c8de9b02f06b115"
+  },
+  "reports/sql_results/Q22.csv": {
+    "bytes": 119,
+    "sha256": "adc8f372a590776ecf1fc96d273e42d2cc90b113e7d892ec9cb34abc2fef6b20"
+  },
+  "reports/sql_results/Q23.csv": {
+    "bytes": 103,
+    "sha256": "d3f2faee7f8655e4dc91ab1e9224f3dd508a78a369f02a87017a99ecc741c23d"
+  },
+  "reports/sql_results/Q24.csv": {
+    "bytes": 748,
+    "sha256": "d31d066d98a26fb746e2a575ef81411d8795e8f43a3ed75016ce0995a679da7b"
+  },
+  "reports/sql_results/Q25.csv": {
+    "bytes": 7971,
+    "sha256": "8d1d3fd142579900108e87b8ba71ffbc87930b7797aca045120974ebba576b42"
+  },
+  "reports/sql_results/Q26.csv": {
+    "bytes": 70,
+    "sha256": "f861a26f87ce350c3a0478d544aa36809e1fa0ec3be3e758ad2a503082b5c72a"
+  },
+  "reports/sql_validation.json": {
+    "bytes": 4144,
+    "sha256": "fb64b9aed224b4b124a077a1c7f9bd9e17cc9251c298da38d10d595caff16037"
+  },
+  "reports/validation.json": {
+    "bytes": 16610,
+    "sha256": "bcd70b3baa5307acfb00f57972e00a37a22a190deaed3dc3458215421bc6a682"
+  },
+  "requirements.txt": {
+    "bytes": 108,
+    "sha256": "1234a2b6f35ae4a1d6c9ac6ee364cf1ea7efa4a6f33067e6163a8483cf4c4ddb"
+  },
+  "scripts/build.py": {
+    "bytes": 636,
+    "sha256": "e193b2a2858877d5e5ba7edfec8cdcc0e18cb2328d89b54d412eb4d1f177d3d8"
+  },
+  "scripts/build_powerbi.py": {
+    "bytes": 22930,
+    "sha256": "4e971be2e860a1414be98c3cc53467af1eae69453476fedfdf0e047269f087f5"
+  },
+  "scripts/pipeline.py": {
+    "bytes": 14055,
+    "sha256": "eec5bacf1ff5147b0d6c386833b414711b63c859f93684f4ec338de3bcb0743d"
+  },
+  "scripts/report.py": {
+    "bytes": 14738,
+    "sha256": "347665e72e293d7b5d84caeda6c6d89d6c7c305d2981e08fa02c175399cc0f78"
+  },
+  "scripts/run_sql.py": {
+    "bytes": 1047,
+    "sha256": "17e2e3b553d6e28edd66d3c2a69639ff7a94ebd2714b3f1bc0287c8c7a964e0e"
+  },
+  "scripts/validate.py": {
+    "bytes": 5822,
+    "sha256": "5000112f87cbc7f8199f147245d39d390685707236c8ebedbe478faa2022b3a5"
+  },
+  "scripts/validate_schemas.py": {
+    "bytes": 1755,
+    "sha256": "e375ae4c5f7972aea5b18c62a929728bc0838d4b1ea19234507a0d167f6a408d"
+  },
+  "sql/analysis.sql": {
+    "bytes": 9055,
+    "sha256": "413f95c8f29167ac8e9ee8fca5a5644e2e79980851a99eb453b87f4b4bd89130"
+  },
+  "sql/schema.sql": {
+    "bytes": 2471,
+    "sha256": "5969386bbf77db2fe86b453778a8c8ba817600868d5c9dbb1353b41dbbf3520b"
+  }
+}

@@ -1,0 +1,45 @@
+table DimMCC
+	lineageTag: 9253c887-985c-4fe4-9d7b-8cd22f8bf262
+
+	column MCC
+		dataType: int64
+		lineageTag: 6d061bd1-c207-462a-8395-da42d44a6eda
+		summarizeBy: none
+		sourceColumn: MCC
+
+	column Description
+		dataType: string
+		lineageTag: 607a3a69-af2b-4339-97d0-4b248e714c4e
+		summarizeBy: none
+		sourceColumn: Description
+
+	column MerchantGroup
+		dataType: string
+		lineageTag: 1962aff5-8b3e-4aae-8cff-f9234faa4c4a
+		summarizeBy: none
+		sourceColumn: MerchantGroup
+
+	column P99Amount
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: aa3dbc45-3d8b-47f1-ad36-85d726de845d
+		summarizeBy: none
+		sourceColumn: P99Amount
+
+	column ReferenceCount
+		dataType: int64
+		lineageTag: b9272a1d-0b93-4816-9874-18b9f3412a35
+		summarizeBy: none
+		sourceColumn: ReferenceCount
+
+	partition DimMCC = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "/DimMCC.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, {"MCC","P99Amount","ReferenceCount"}),
+				  Typed = Table.TransformColumnTypes(Nulls, {{"MCC", Int64.Type}, {"Description", type text}, {"MerchantGroup", type text}, {"P99Amount", Currency.Type}, {"ReferenceCount", Int64.Type}}, "en-US")
+				in
+				  Typed
+

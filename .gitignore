@@ -1,0 +1,59 @@
+# ------------------------------------------------------------------
+# PRIVATE DATA: DO NOT COMMIT SOURCE OR DERIVED BANKING RECORDS
+# ------------------------------------------------------------------
+/data/raw/**
+!/data/raw/README.md
+/data/processed/**
+/data/analytics.sqlite*
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+# Exported query results, metrics, row-level previews, reports
+/reports/**
+
+# ------------------------------------------------------------------
+# POWER BI: native user cache, local machine paths, imported PBIX
+# ------------------------------------------------------------------
+**/.pbi/
+**/cache.abf
+**/localSettings.json
+**/expressions.tmdl
+*.pbix
+*.pbit
+
+# ------------------------------------------------------------------
+# SECRETS / LOCAL CONFIG
+# ------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.pfx
+secrets.json
+credentials.json
+
+# ------------------------------------------------------------------
+# PYTHON / IDE / OS / LOGS
+# ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+build.log
+*.tmp
+*.bak
+*.zip
+
+# IMPORTANT: docs/img/*.png is NOT ignored on purpose.
+# Publish real screenshots ONLY after data-rights and privacy review.

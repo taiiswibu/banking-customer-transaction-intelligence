@@ -1,0 +1,65 @@
+table DimDate
+	lineageTag: 9bdddee1-4404-401a-99db-1d9fa5e41306
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: yyyy-MM-dd
+		lineageTag: c5acaff4-d7d2-4bbf-b711-810512ac14b4
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		lineageTag: 6eb5aa96-1679-4857-83c2-c91706c71d7f
+		summarizeBy: none
+		sourceColumn: Year
+
+	column MonthNumber
+		dataType: int64
+		lineageTag: 16e8e214-2f9f-42f5-a842-cb70abd78db3
+		summarizeBy: none
+		sourceColumn: MonthNumber
+
+	column Month
+		dataType: string
+		lineageTag: fd4e219c-5a5b-4ee9-83d1-333b9d57edc4
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: MonthNumber
+
+	column YearMonth
+		dataType: string
+		lineageTag: 4b03be27-4f26-4aed-9a9d-1d26afffe2e2
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+	column MonthStart
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 89479cf3-0a44-4ac5-b6aa-a07d4aefd670
+		summarizeBy: none
+		sourceColumn: MonthStart
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Weekday
+		dataType: string
+		lineageTag: d9294bed-d6ce-42ce-bb42-9edcf6b2fc63
+		summarizeBy: none
+		sourceColumn: Weekday
+
+	partition DimDate = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "/DimDate.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, {"Date","Year","MonthNumber","MonthStart"}),
+				  Typed = Table.TransformColumnTypes(Nulls, {{"Date", type date}, {"Year", Int64.Type}, {"MonthNumber", Int64.Type}, {"Month", type text}, {"YearMonth", type text}, {"MonthStart", type date}, {"Weekday", type text}}, "en-US")
+				in
+				  Typed
+

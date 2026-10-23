@@ -1,0 +1,20 @@
+relationship e42f870d967bf3d573f1
+	fromColumn: DimCard.ClientID
+	toColumn: DimCustomer.ClientID
+
+relationship 75a949e85328102be3ff
+	fromColumn: FactTransaction.CardID
+	toColumn: DimCard.CardID
+
+relationship f3f69660065980886350
+	fromColumn: FactTransaction.Date
+	toColumn: DimDate.Date
+
+relationship 270243876a77876cd742
+	fromColumn: FactTransaction.MCC
+	toColumn: DimMCC.MCC
+
+relationship ebff43dc50c4b579eef6
+	fromColumn: FactError.TransactionID
+	toColumn: FactTransaction.TransactionID
+

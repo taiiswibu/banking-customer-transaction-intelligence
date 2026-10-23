@@ -1,0 +1,213 @@
+table KPI_Measures
+	lineageTag: 1a8b7b26-2a31-4faa-bb0d-cb3a3cfa6551
+
+	measure Attempts = COUNTROWS(FactTransaction)
+		formatString: #,0
+		displayFolder: Activity
+		lineageTag: f8473e33-7ab3-47f5-a8f5-074b8e35a89a
+
+	measure 'Error Attempts' = COALESCE(SUM(FactTransaction[HasError]), 0)
+		formatString: #,0
+		displayFolder: Payment
+		lineageTag: 1563361e-1c73-4971-8e4c-7e1692152945
+
+	measure 'Error Rate' = DIVIDE([Error Attempts], [Attempts])
+		formatString: 0.00%
+		displayFolder: Payment
+		lineageTag: d22c9104-cd93-4cbf-b596-8b046177758b
+
+	measure 'No Recorded Error Attempts' = [Attempts] - [Error Attempts]
+		formatString: #,0
+		displayFolder: Payment
+		lineageTag: 06d3076e-86b7-4b8a-ac5a-43689edf6841
+
+	measure 'Positive Volume' = CALCULATE(SUM(FactTransaction[Amount]), KEEPFILTERS(FactTransaction[HasError] = 0), KEEPFILTERS(FactTransaction[Amount] > 0))
+		formatString: $#,0.00;($#,0.00)
+		displayFolder: Volume
+		lineageTag: 3c96895b-b49b-4788-9e29-3527174b86b7
+
+	measure 'Negative Volume' = CALCULATE(SUM(FactTransaction[Amount]), KEEPFILTERS(FactTransaction[HasError] = 0), KEEPFILTERS(FactTransaction[Amount] < 0))
+		formatString: $#,0.00;($#,0.00)
+		displayFolder: Volume
+		lineageTag: 5cd19c1c-1b20-48d5-b005-1b057cda9e7c
+
+	measure 'Net Volume' = CALCULATE(SUM(FactTransaction[Amount]), KEEPFILTERS(FactTransaction[HasError] = 0))
+		formatString: $#,0.00;($#,0.00)
+		displayFolder: Volume
+		lineageTag: a180de67-d69e-46e4-b756-fb21b5d0362e
+
+	measure 'All Recorded Volume' = SUM(FactTransaction[Amount])
+		formatString: $#,0.00;($#,0.00)
+		displayFolder: Volume
+		lineageTag: 626282ff-c7ae-4b71-85eb-0e40ff186c34
+
+	measure 'Error Row Volume' = CALCULATE(SUM(FactTransaction[Amount]), KEEPFILTERS(FactTransaction[HasError] = 1))
+		formatString: $#,0.00;($#,0.00)
+		displayFolder: Volume
+		lineageTag: 81569011-0a8b-4d82-a676-87509bca7994
+
+	measure 'Average Positive Amount' = DIVIDE([Positive Volume], CALCULATE([Attempts], KEEPFILTERS(FactTransaction[HasError] = 0), KEEPFILTERS(FactTransaction[Amount] > 0)))
+		formatString: $#,0.00
+		displayFolder: Volume
+		lineageTag: 64ecc3fb-0168-48af-bd63-2282a683b647
+
+	measure 'Observed Customers' = DISTINCTCOUNT(FactTransaction[ClientID])
+		formatString: #,0
+		displayFolder: Activity
+		lineageTag: c8ef1125-110d-448f-862d-c9d17ffbb385
+
+	measure 'Observed Cards' = DISTINCTCOUNT(FactTransaction[CardID])
+		formatString: #,0
+		displayFolder: Activity
+		lineageTag: f4e5853f-9f91-452b-be9c-3e15933bf754
+
+	measure 'Portfolio Cards' = COUNTROWS(DimCard)
+		formatString: #,0
+		displayFolder: Portfolio
+		lineageTag: 4930e1c1-9f23-4226-82dd-32724d36a088
+
+	measure 'Portfolio Customers' = COUNTROWS(DimCustomer)
+		formatString: #,0
+		displayFolder: Portfolio
+		lineageTag: 8f098035-3d18-447b-8c40-cd503f192e71
+
+	measure 'Observed Card Coverage' = DIVIDE([Observed Cards], [Portfolio Cards])
+		formatString: 0.00%
+		displayFolder: Portfolio
+		lineageTag: e15e1cd9-061f-4c74-ac46-3a21de1a5032
+
+	measure 'Snapshot Unobserved Cards' = CALCULATE(COUNTROWS(DimCard), KEEPFILTERS(DimCard[ObservedActive] = 0))
+		formatString: #,0
+		displayFolder: Snapshot
+		lineageTag: 765d5699-cc27-4f43-a332-f30ff7c12499
+
+	measure 'Snapshot Recent Cards' = CALCULATE(COUNTROWS(DimCard), KEEPFILTERS(DimCard[SnapshotStatus] = "Seen in last 30d"))
+		formatString: #,0
+		displayFolder: Snapshot
+		lineageTag: 0771e609-18d9-4f1b-9e0e-f7e7c9495cac
+
+	measure 'Snapshot Long Open Unobserved' = CALCULATE(COUNTROWS(DimCard), KEEPFILTERS(DimCard[LongOpenUnobserved] = 1))
+		formatString: #,0
+		displayFolder: Snapshot
+		lineageTag: 6544148f-3532-4742-aeca-f91e98292bac
+
+	measure 'Snapshot As Of' = CALCULATE(MAX(FactTransaction[Date]), REMOVEFILTERS())
+		formatString: yyyy-MM-dd
+		displayFolder: Snapshot
+		lineageTag: 5018ceeb-2451-4de7-a24a-b4050d52ff01
+
+	measure 'Snapshot Recent Observed Cards' =
+			VAR EndDate = [Snapshot As Of]
+			RETURN CALCULATE([Observed Cards], REMOVEFILTERS(DimDate), DATESBETWEEN(DimDate[Date], EndDate - 29, EndDate))
+		formatString: #,0
+		displayFolder: Snapshot
+		lineageTag: d2108175-5fe3-49de-b24b-035da6e77ec4
+
+	measure 'Review Attempts' = COALESCE(SUM(FactTransaction[ReviewFlag]), 0)
+		formatString: #,0
+		displayFolder: Review
+		lineageTag: c518760b-7786-452f-acba-12722abeb9cd
+
+	measure 'Review Rate' = DIVIDE([Review Attempts], [Attempts])
+		formatString: 0.00%
+		displayFolder: Review
+		lineageTag: 13a92004-7faa-4c79-89d3-96219fa34f1c
+
+	measure 'High Value Attempts' = COALESCE(SUM(FactTransaction[HighValueFlag]), 0)
+		formatString: #,0
+		displayFolder: Review
+		lineageTag: 4b2d20af-4eca-48b4-94b4-96b754cca24c
+
+	measure 'Multi State Attempts' = COALESCE(SUM(FactTransaction[MultiStateFlag]), 0)
+		formatString: #,0
+		displayFolder: Review
+		lineageTag: e67e97a7-216e-4c5b-8cc4-d22dbde9a5d1
+
+	measure 'Error Burst Attempts' = COALESCE(SUM(FactTransaction[ErrorBurstFlag]), 0)
+		formatString: #,0
+		displayFolder: Review
+		lineageTag: ae725419-5549-4bc6-b8d9-3071e89a652b
+
+	measure 'Rule Attempts' = SWITCH(SELECTEDVALUE(DimRule[Rule]), "MCC > P99", [High Value Attempts], "Multi-state card-day", [Multi State Attempts], "3+ errors / 60 min", [Error Burst Attempts])
+		formatString: #,0
+		displayFolder: Review
+		lineageTag: 1f4a467e-fb9d-4402-bd10-62db59b6361c
+
+	measure 'Error Mentions' = COUNTROWS(FactError)
+		formatString: #,0
+		displayFolder: Payment
+		lineageTag: f960bc22-cb5d-4dfb-b450-72500f96981c
+
+	measure 'Multi Error Attempts' = CALCULATE([Attempts], KEEPFILTERS(FactTransaction[ErrorCount] > 1))
+		formatString: #,0
+		displayFolder: Payment
+		lineageTag: 4637a221-fc5f-4665-9a21-9b07acf564c7
+
+	measure 'Technical Error Attempts' = CALCULATE([Attempts], FILTER(FactTransaction, CONTAINSSTRING(FactTransaction[Errors], "Technical Glitch")))
+		formatString: #,0
+		displayFolder: Payment
+		lineageTag: 0f5b5bd0-bfff-43a8-84f1-ae3d1cbf8f09
+
+	measure 'Primary Error Attempts' = CALCULATE([Attempts], KEEPFILTERS(FactTransaction[HasError] = 1))
+		formatString: #,0
+		displayFolder: Payment
+		lineageTag: 66fab099-5cd2-431e-bc53-0b8a65a595fe
+
+	measure 'Positive Volume PY' = CALCULATE([Positive Volume], SAMEPERIODLASTYEAR(DimDate[Date]))
+		formatString: $#,0.00
+		displayFolder: Time intelligence
+		lineageTag: 06e46c19-ebeb-437e-8220-9a3d359c5d5f
+
+	measure 'Positive Volume YoY' = DIVIDE([Positive Volume] - [Positive Volume PY], [Positive Volume PY])
+		formatString: 0.00%
+		displayFolder: Time intelligence
+		lineageTag: dec9fc0c-4626-4ccc-b220-451437de63af
+
+	measure 'Positive Volume Running' = CALCULATE([Positive Volume], FILTER(ALLSELECTED(DimDate), DimDate[Date] <= MAX(DimDate[Date])))
+		formatString: $#,0.00
+		displayFolder: Time intelligence
+		lineageTag: 0c61260b-b3f3-4051-851f-d0240a1587c9
+
+	measure 'Positive Volume Last 30d' =
+			VAR EndDate = MAX(FactTransaction[Date])
+			RETURN CALCULATE([Positive Volume], REMOVEFILTERS(DimDate), DATESBETWEEN(DimDate[Date], EndDate - 29, EndDate))
+		formatString: $#,0.00
+		displayFolder: Time intelligence
+		lineageTag: ec781fe4-7439-42f5-82cb-7ce5186538d3
+
+	measure 'Credit Volume Last 30d' = CALCULATE([Positive Volume Last 30d], KEEPFILTERS(DimCard[CardType] = "Credit"))
+		formatString: $#,0.00
+		displayFolder: Proxy
+		lineageTag: a5cb266b-b3a4-4d0f-9bab-1033de6d40da
+
+	measure 'Credit Limit Snapshot' = CALCULATE(SUM(DimCard[CreditLimit]), KEEPFILTERS(DimCard[CardType] = "Credit"))
+		formatString: $#,0.00
+		displayFolder: Proxy
+		lineageTag: 9b05c599-b7fe-4d0e-a2fa-0cd5639a2dd8
+
+	measure 'Volume To Limit Proxy' = DIVIDE([Credit Volume Last 30d], [Credit Limit Snapshot])
+		formatString: 0.00%
+		displayFolder: Proxy
+		lineageTag: 8f1fda81-e6e7-4d20-a156-b0355a278504
+
+	measure 'Volume Reconciliation Delta' = [Net Volume] - COALESCE([Positive Volume], 0) - COALESCE([Negative Volume], 0)
+		formatString: $#,0.00
+		displayFolder: Validation
+		lineageTag: 2e017e67-3b70-467c-ab7f-9f5c38be626a
+
+	measure 'Error Volume Reconciliation Delta' = [All Recorded Volume] - COALESCE([Net Volume], 0) - COALESCE([Error Row Volume], 0)
+		formatString: $#,0.00
+		displayFolder: Validation
+		lineageTag: b897bc73-5cb1-47e6-b314-e9fb7e61302b
+
+	column Anchor
+		dataType: int64
+		isHidden
+		lineageTag: 5c129bee-587d-4016-a8e1-d9ec2ba4cb50
+		summarizeBy: none
+		sourceColumn: Anchor
+
+	partition KPI_Measures = m
+		mode: import
+		source = #table(type table [Anchor = Int64.Type], {{0}})
+

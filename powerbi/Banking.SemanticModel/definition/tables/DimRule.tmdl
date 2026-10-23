@@ -1,0 +1,20 @@
+table DimRule
+	lineageTag: e8afcf36-b0d7-4507-ba6f-b1e70cfc5ba1
+
+	column Rule
+		dataType: string
+		lineageTag: 87fb6301-4591-4097-bae8-60150ab64bae
+		summarizeBy: none
+		sourceColumn: Rule
+
+	partition DimRule = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "/DimRule.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, {}),
+				  Typed = Table.TransformColumnTypes(Nulls, {{"Rule", type text}}, "en-US")
+				in
+				  Typed
+

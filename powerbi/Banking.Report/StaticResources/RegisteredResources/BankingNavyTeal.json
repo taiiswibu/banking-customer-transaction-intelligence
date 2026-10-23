@@ -1,0 +1,32 @@
+{
+  "name": "BankingNavyTeal",
+  "dataColors": [
+    "#008C95",
+    "#386EAC",
+    "#E3A347",
+    "#B0667B",
+    "#568E78",
+    "#6D78AE",
+    "#72B8BA"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#172D45",
+  "tableAccent": "#008C95",
+  "textClasses": {
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#5D7186"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#172D45"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 26,
+      "color": "#172D45"
+    }
+  }
+}

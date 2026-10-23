@@ -1,0 +1,71 @@
+table DimCustomer
+	lineageTag: 79c5b991-a50a-4d1a-9a5d-6d26d9fcd735
+
+	column ClientID
+		dataType: int64
+		isHidden
+		lineageTag: 080acad8-fa2b-4fab-9ba4-5de391661d02
+		summarizeBy: none
+		sourceColumn: ClientID
+
+	column SnapshotAge
+		dataType: int64
+		lineageTag: e16bc4b4-81d0-4ae8-bcd3-b90b7b229f6f
+		summarizeBy: none
+		sourceColumn: SnapshotAge
+
+	column AgeBand
+		dataType: string
+		lineageTag: ffafe3db-bc9b-4de6-8195-7e98a91e6da1
+		summarizeBy: none
+		sourceColumn: AgeBand
+
+	column Gender
+		dataType: string
+		lineageTag: d21f9962-9e6c-4d06-b8a6-b2af723a682a
+		summarizeBy: none
+		sourceColumn: Gender
+
+	column YearlyIncome
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: d3d292ad-5ee9-451e-b01d-144b18d39e9b
+		summarizeBy: none
+		sourceColumn: YearlyIncome
+
+	column TotalDebt
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 3bd679c9-0432-498e-a99a-e4bad7b36568
+		summarizeBy: none
+		sourceColumn: TotalDebt
+
+	column CreditScore
+		dataType: int64
+		lineageTag: d793c74c-5132-40b4-a084-80caff84a5c8
+		summarizeBy: none
+		sourceColumn: CreditScore
+
+	column CreditBand
+		dataType: string
+		lineageTag: 04f67a37-31d7-412b-94c1-a3025ac6b4b0
+		summarizeBy: none
+		sourceColumn: CreditBand
+
+	column ReportedCreditCards
+		dataType: int64
+		lineageTag: 269265a1-2820-483c-bb9b-ac902035ba3a
+		summarizeBy: none
+		sourceColumn: ReportedCreditCards
+
+	partition DimCustomer = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents(DataFolder & "/DimCustomer.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, {"ClientID","SnapshotAge","YearlyIncome","TotalDebt","CreditScore","ReportedCreditCards"}),
+				  Typed = Table.TransformColumnTypes(Nulls, {{"ClientID", Int64.Type}, {"SnapshotAge", Int64.Type}, {"AgeBand", type text}, {"Gender", type text}, {"YearlyIncome", Currency.Type}, {"TotalDebt", Currency.Type}, {"CreditScore", Int64.Type}, {"CreditBand", type text}, {"ReportedCreditCards", Int64.Type}}, "en-US")
+				in
+				  Typed
+
